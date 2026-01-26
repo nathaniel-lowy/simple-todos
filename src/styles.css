@@ -1,0 +1,98 @@
+:root {
+    --body-clr: #333;
+    --task-clr: #fed;
+    --header-clr: black;
+    --header-txt: white;
+    --wrapper-width: 600px;
+    --delete-clr: #fcc;
+    --delete-txt: #333;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+    background-color: var(--body-clr);
+    display: flex;
+    flex-direction: column;
+    padding-top: 108px;
+    justify-content: start;
+    align-items: center;
+    /* width: 100dvw;
+    height: 100dvh; */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 72px;
+    background-color: var(--header-clr);
+    color: var(--header-txt);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    width: min(100%, 600px);
+}
+
+#add-btn {
+    width: 80px;
+    height: 30px;
+    color: var(--header-txt);
+    background: var(--header-clr);
+    border: none;
+    border-radius: 8px;
+    margin: 0 auto;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    width: min(100%, 600px);
+    border: 1px blue solid;
+    gap: 12px;
+}
+
+.task {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    background-color: var(--task-clr);
+    width: 100%;
+    gap: 12px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.task-text {
+    padding: 12px;
+}
+
+.task .task-delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-color: var(--delete-clr);
+    width: 20px;
+    height: 100%;
+    cursor: pointer;
+    color: var(--delete-txt);
+    font-size: 0.6rem;
+}
+
+textarea {
+    max-width: 380px;
+    width: 100%;
+    min-height: 48px;
+}
