@@ -1,7 +1,9 @@
 export default class Task {
-    constructor(text, date, id = crypto.randomUUID()) {
+    constructor(text, date, id = crypto.randomUUID(), indent = 0, indentDirection = "right") {
         this.text = text;
         this.date = this.getDate();
+        this.indent = indent;
+        this.indentDirection = indentDirection;
         this.id = id;
     }
 
@@ -24,5 +26,10 @@ export default class Task {
         this.date = temp;
     }
 
+    getIndent() {return this.indent};
+    getIndentDirection() {return this.indentDirection};
     getID() {return this.id};
+
+    setIndent(number) {this.indent = number};
+    setIndentDirection(direction) {this.indentDirection = direction};
 }

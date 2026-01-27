@@ -6,6 +6,8 @@
     --wrapper-width: 600px;
     --delete-clr: #fcc;
     --delete-txt: #333;
+    --indent-clr: #ccf;
+    --indent-txt: #333;
 }
 
 * {
@@ -66,7 +68,7 @@ main {
 
 .task {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: auto 1fr auto;
     background-color: var(--task-clr);
     width: 100%;
     gap: 12px;
@@ -75,15 +77,16 @@ main {
 }
 
 .task-text {
-    padding: 12px;
+    padding: 12px 0px;
+    white-space: pre-wrap;
 }
 
-.task .task-delete {
+.task .task-delete,
+.task .task-indenter {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0;
-    background-color: var(--delete-clr);
     width: 32px;
     height: 100%;
     cursor: pointer;
@@ -91,8 +94,26 @@ main {
     font-size: 0.6rem;
 }
 
+.task-delete {
+    background-color: var(--delete-clr);
+}
+
+.task-indenter {
+    background-color: var(--indent-clr);
+}
+
 textarea {
     max-width: 380px;
     width: 100%;
     min-height: 48px;
+}
+
+.margin-left-1 {
+    margin-left: 12px;
+    width: calc(100% - 12px);
+}
+
+.margin-left-2 {
+    margin-left: 24px;
+    width: calc(100% - 24px);
 }
