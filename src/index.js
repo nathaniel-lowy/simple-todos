@@ -20,6 +20,11 @@ function createTaskDOM() {
     const taskText = document.createElement("div");
     taskText.classList.add("task-text");
     taskText.textContent = task.text;
+    taskText.addEventListener("click", ()=>{
+      task.swap();
+      taskText.textContent = task.text;
+      console.log(task)
+  });
     taskElement.append(taskText);
     const taskDelete = document.createElement("div");
     taskDelete.classList.add("task-delete");
