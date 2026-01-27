@@ -33,9 +33,11 @@ function createTaskDOM() {
 }
 
 function deleteTask(taskID) {
-  taskList = taskList.filter((task) => task.id !== taskID);
-  save();
-  createTaskDOM();
+  if (confirm("Are you sure you would like to delete this note?")) {
+    taskList = taskList.filter((task) => task.id !== taskID);
+    save();
+    createTaskDOM();
+  }
 }
 
 function save() {
@@ -44,21 +46,22 @@ function save() {
 }
 
 function load() {
-    taskList = [];
+  taskList = [];
   if (localStorage.getItem("simple-todo-list") !== null) {
     const tasks = JSON.parse(localStorage.getItem("simple-todo-list"));
-    tasks.forEach(task => {
-        taskList.push(new Task(task.text, task.date, task.id));
-    })
+    tasks.forEach((task) => {
+      taskList.push(new Task(task.text, task.date, task.id));
+    });
   }
   createTaskDOM();
 }
 
 function initialize() {
-document.querySelector("#add-btn").addEventListener("click", () => {
-  createTask();
-});
-load();
+  document.querySelector("#add-btn").addEventListener("click", () => {
+    createTask();
+    document.querySelector("textarea").value = "";
+  });
+  load();
 }
 
 initialize();
