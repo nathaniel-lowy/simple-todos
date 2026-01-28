@@ -109,11 +109,11 @@ textarea {
 }
 
 .margin-left-1 {
-    margin-left: 12px;
-    width: calc(100% - 12px);
+    margin-left: 36px;
+    width: calc(100% - 36px);
 }
 
 .margin-left-2 {
-    margin-left: 24px;
-    width: calc(100% - 24px);
+    margin-left: 72px;
+    width: calc(100% - 72px);
 }
